@@ -276,14 +276,13 @@ body,
         gap: 15px;
       }
 
-      .sales-block button{
-        width: 50%;
-        color: #F0F0F0;
+      button{
+        width: 100%;
+        background: #ff3b3c;
+        color: white;
         font-weight: bold;
-        background-color: rgba(255, 59, 60, 1);
-        text-decoration: none;
-        background-image: linear-gradient(to right, rgba(255, 59, 60, 1) 0%, rgb(247, 98, 98) 50%, rgb(153, 22, 22)100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; 
-        border: 2px solid rgba(255, 59, 60, 1);
+        border: none;
+        height: 40px;
         border-radius: 10px;
       }
       .total{
@@ -324,7 +323,55 @@ body,
       fieldset .label{
         font-weight: bold;
       }
+
+      .cart-container{
+        display: flex;
+      }
+
+      /* Styling del cart */
       
+.main-cart{
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-container{
+  display: flex;  
+  justify-content: space-around;
+  align-items: center;  
+}
+
+/* para los media queries agregar flex-direction: column; */
+
+.product-cart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #f0f0f0;
+  margin: 3% 0;
+  align-items: center;
+  padding: 10px;
+  border-radius:  5px;
+}
+
+.product-cart img{
+  max-width: 20%; /* La imagen no excederá el ancho del contenedor */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+  display: block;
+  border-radius: 10px;
+}
+
+.resume{
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+strong.price{
+  text-align: center;
+}
+
 
 
       /* ---------------------Responsive / media queries-------------------------------- */
@@ -377,6 +424,10 @@ body,
 
             flex-direction: column;
           }
+          .cart-container{
+            flex-direction: column;
+            margin: 5%;
+          }
       }
 
       @media (max-width: 560px) {
@@ -389,5 +440,11 @@ body,
           }
           .title-container span:last-child{
             font-size: 4rem;
+          }
+          .price{
+            font-size: medium;
+          }
+          .info .description{
+            font-size: smaller;
           }
       } 

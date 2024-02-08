@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda Virtual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="search">
+          <div class="logo">
+            <img src="assets/tiendamia-logo.svg" alt="" />
+          </div>
+          <div class="form">
+            <form action="">
+              <input type="text" placeholder="Search" />
+            </form>
+          </div>
+          <div class="social">
+            <a href="https://www.facebook.com/" target="_blank"
+              ><img src="assets/facebook.png" alt=""
+            /></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><img src="assets/instagram.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="#productos">Ofertas de la semana</a></li>
+            <li><a href="#productos">Cómo comprar</a></li>
+            <li><a href="#productos">Costos y tarifas</a></li>
+            <li><a href="#productos">Mis pedidos</a></li>
+            <li><a href="#productos">Invita y gana</a></li>
+            <li><a href="#productos">Garantía de Entrega</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section id="hero">
+      <div class="container">
+        <div class="title-container">
+          <span>Mi carrito</span>
+          
+        </div>
+      </div>
+    </section>
+
+      <main class="main-cart">
+
+            
+        <div class="cart-container">
+
+                    <div class="card resume">
+                        <div>
+                            <h2>Resumen del pedido</h2>
+                            <div class="subtotal">
+                            <h3>Subtotal</h3>
+                            <strong class="price"></strong>
+                            </div>
+                            <div class="product-tax-policy">
+                                Incluye impuesto País y percepción AFIP
+                            </div>
+                        </div>
+                    <button class="btn-primary">Finaliza tu compra</button>
+                    </div>
+                </div>
+            </main>
+        
+
+    <footer>
+      <div class="container">
+        <div class="columns-container">
+          <div class="col">
+            <ul>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+              <li><a href="">Prueba</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright"><p>Curso HTML & CSS. 2024. Globant+Egg</p></div>
+      </div>
+    </footer>
+    <script>
+
+        const cart = [
+        {
+            title: "MacBook Pro 13'4",
+            description:
+            "MacBook Pro 13'4 con 8GB de RAM y 512GB de almacenamiento",
+            price: 750000,
+            quantity: 1,
+            image: "../assets/mock1.jpg",
+        },
+        {
+            title: "MacBook Pro 15'4",
+            description:
+            "MacBook Pro 15'4 con 8GB de RAM y 512GB de almacenamiento",
+            price: 800000,
+            quantity: 2,
+            image: " ../assets/mock1.jpg",
+        },
+        {
+            title: "Lenovo",
+            description: "Lenovo 13'4 con 8GB de RAM y 256GB de almacenamiento",
+            price: 75000,
+            quantity: 1,
+            image: " ../assets/mock1.jpg",
+        }
+        ];
+
+        function populate() {
+                const cartContainer = document.querySelector(".cart-container");
+                if (!cartContainer) return console.log("Error");
+                const productContainer = document.createElement("div");
+                productContainer.classList.add("card", "products");
+                cart.forEach((product) => {
+                    const productElement = document.createElement("article");
+                    productElement.classList.add("product-cart");
+                    const productImage = document.createElement("img");
+                    productImage.src = product.image;
+                    productImage.alt = product.title;
+                    const productMiddle = document.createElement("div");
+                    productMiddle.classList.add("middle");
+                    const productInfo = document.createElement("div");
+                    productInfo.classList.add("info");
+                    const productTitle = document.createElement("strong");
+                    productTitle.classList.add("title");
+                    productTitle.textContent = product.title;
+                    const productDescription = document.createElement("span");
+                    productDescription.classList.add("description");
+                    productDescription.textContent = product.description;
+                    const productInput = document.createElement("input");
+                    productInput.type = "number";
+                    productInput.value = product.quantity;
+                    productInput.min = 1;
+                    const productPrice = document.createElement("strong");
+                    productPrice.classList.add("price");
+                    productPrice.textContent = `AR$ ${formatPrice(product.price)}`;
+                    productInfo.appendChild(productTitle);
+                    productInfo.appendChild(productDescription);
+                    productMiddle.appendChild(productInfo);
+                    productMiddle.appendChild(productInput);
+                    productElement.appendChild(productImage);
+                    productElement.appendChild(productMiddle);
+                    productElement.appendChild(productPrice);
+                    productContainer.appendChild(productElement);
+
+
+            productInput.addEventListener("change", (event)=>{
+                const value = event.target.value;
+                const index = cart.findIndex(({title})=> product.title === title);
+
+                if(index < 0){
+                    return console.log('error');
+                }
+
+                cart[index].quantity = value;
+                renderTotalPrice();
+            })
+
+                });
+                cartContainer.insertAdjacentElement("afterbegin", productContainer);
+                const priceElement = document.querySelector(".resume .price");
+                priceElement.textContent = formatPrice(
+                    cart.reduce(
+                        (total, { price, quantity }) => total + price * quantity,
+                        0
+                    )
+                );
+            }
+            function formatPrice(price) {
+                return new Intl.NumberFormat("es-AR", {
+                    style: "currency",
+                    currency: "ARS",
+                }).format(price);
+            }
+            document.addEventListener("DOMContentLoaded", populate);
+
+
+            function renderTotalPrice() {
+                    const priceElement = document.querySelector(".resume .price");
+                    priceElement.textContent = formatPrice(
+                        cart.reduce(
+                        (total, { price, quantity }) => total + price * quantity,
+                        0
+                        )
+                    );
+                }
+
+                
+
+            
+
+
+    </script>
+  </body>
+</html>

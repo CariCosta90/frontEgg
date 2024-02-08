@@ -255,5 +255,18 @@
         <div class="copyright"><p>Curso HTML & CSS. 2024. Globant+Egg</p></div>
       </div>
     </footer>
+
+    <script>
+
+      document.addEventListener("click", (event)=>{
+        console.log(event);
+        const bodyColor = document.body.style.background;
+
+        document.body.style.background = bodyColor === "white" ? "red" : "white";
+      })
+
+
+
+    </script>
   </body>
 </html>
